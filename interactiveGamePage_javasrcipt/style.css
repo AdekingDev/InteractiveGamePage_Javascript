@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size:50px;
+}
+
+.highlight {
+    color: #f7931e;
+}
+h2 {
+    font-size:40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.site-header {
+    background-color: #333;
+    color: white;
+    padding: 1em 2em;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav a, .search input {
+    margin-left: 1em;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.search input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    padding: 0.5em;
+}
+
+.main-content {
+    display: flex;
+    background-color: #555; 
+    padding: 2em;
+    color: white;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.game-info {
+    flex: 2;
+    padding-left: 2em;
+}
+
+.actions {
+    margin-top: 2em;
+}
+
+.download-btn, .video-btn {
+    margin-right: 1em;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    background-color: #f7931e;
+    cursor: pointer;
+}
+
+.top-collections {
+    background-color: #222;
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 1em 0;
+}
+
+.collection-card {
+    background-color: #333;
+    padding: 1em;
+    border-radius: 50px;
+   /* transition: box-shadow 0.3s ease;
+    border: 1px solid-tranaparent; */
+}
+
+/*.collection-card:hover {
+border-color: transparent;
+box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.6), 0 0 15px 5px rbda(255, 0, 255, 0.6), 0 0 15px 5px rgba(255, 255, 0, 0.6);
+}*/
+
+
+.featured-image {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+.top-collection {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+.about-content {
+    padding: 2em;
+    text-align: left;
+}
+
+.team-section, .mission-section {
+    margin-top: 2em;
+}
+
+
+/* game style */
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; 
+    text-align: center;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.row div {
+    padding: 20px; /* Increased padding */
+    border: 2px solid #000; /* Make border thicker for visibility */
+    height: 80px; /* Increase height */
+    width: 80px; /* Increase width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em; /* Larger font size for X and O */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background transition for interactivity */
+}
+
+.row div:hover {
+    background-color: #e0e0e0; /* Slight background color on hover for feedback */
+}
+
+/* footer for home */
+.site-footer {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f7931e;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 20px;
+    }
+
+    .footer-links a {
+        text-align: center;
+    }
+}
+
+

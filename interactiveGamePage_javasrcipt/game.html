@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noughts and Crosses Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">MyGameHouse</div>
+            <nav class="site-nav">
+                <a href="Home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="#">Collection</a>
+                <a href="#">Team</a>
+                <div class="search"><input type="text" placeholder="Search" /></div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="game-container">
+      <h1>Click to play Noughts and Crosses.</h1>
+      <div class=" board">
+        <div class="row">
+          <div id="0_0" onclick="place(this)"></div>
+          <div id="1_0" onclick="place(this)"></div>
+          <div id="2_0" onclick="place(this)"></div>
+        </div>
+        <div class="row">
+          <div id="0_1" onclick="place(this)"></div>
+          <div id="1_1" onclick="place(this)"></div>
+          <div id="2_1"onclick="place(this)"></div>
+        </div>
+        <div class="row">
+          <div id="0_2" onclick="place(this)"></div>
+          <div id="1_2" onclick="place(this)"></div>
+          <div id="2_2" onclick="place(this)"></div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    var currentPlayer = "O";
+    var won = false;
+    function place(box) {
+      if(box.innerText != "" || won) return;
+      box.innerText = currentPlayer;
+      currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+      checkGameBoard();   
+    }
+    function checkGameBoard() {
+      for(var i = 0; i <= 2; i++) {
+        checkWinner(document.getElementById(i + "_0").innerText,
+          document.getElementById(i + "_1").innerText,
+          document.getElementById(i + "_2").innerText);
+        checkWinner(document.getElementById("0_" + i).innerText,
+          document.getElementById("1_" + i).innerText,
+          document.getElementById("2_" + i).innerText);
+      }
+      checkWinner(document.getElementById("0_0").innerText,
+        document.getElementById("1_1").innerText,
+        document.getElementById("2_2").innerText);
+      checkWinner(document.getElementById("0_2").innerText,
+        document.getElementById("1_1").innerText,
+        document.getElementById("2_0").innerText);
+    }
+    function checkWinner(first, second, third) {
+      if(first != "" && first == second && first == third) {
+        alert("Winner!");
+        won = true;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noughts and Crosses Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">MyGameHouse</div>
+            <nav class="site-nav">
+                <a href="about.html">About</a>
+                <a href="#">Collection</a>
+                <a href="about.html">Team</a>
+                <div class="search"><input type="text" placeholder="Search" /></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <aside class="sidebar">
+            <img src="image/tictac.png" alt="Featured Image" class="featured-image">
+        </aside>
+        <section class="game-info">
+            <h1>Play game <span class="highlight">everyday</span></h1>
+            <h2><span class="highlight">Become a</span> legend</h2>
+            <p>A two-player game played on a three-by-three grid, in which players take it in turns to place their respective symbol (either a nought or a cross) in a cell of the grid, the objective being to form a row, column or diagonal of three of one's own symbol.</p>
+            <div class="actions">
+                <a href="game.html" class="download-btn">Play Now</a>
+                <button class="video-btn" onclick="showVideo()">Watch Video</button>
+            </div>
+            <div id="videoModal" class="video-modal" style="display:none;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dkC1E6SIgik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <button class="video-close-btn" onclick="hideVideo()">Close</button>
+            </div>
+
+        </section>
+    </main>
+
+    <section class="top-collections">
+        <h3>Top Collections</h3>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <h4>Dice Game</h4>
+                <img src="image/Dice.png" alt="Top collection" class="top-collection">
+                <p>Price: $3</p>
+            </div>
+            <div class="collection-card">
+                <h4>Drink or Trunk</h4>
+                <img src="image/drink.png" alt="Top collection" class="top-collection">
+                <p>Price: $4</p>
+            </div>
+            <div class="collection-card">
+                <h4>Snake and Ladder</h4>
+                <img src="image/snake.png" alt="Top collection" class="top-collection">
+                <p>Price: $5</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2023 MyGameHouse. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="terms.html">Terms and Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        
+        function showVideo() {
+            document.getElementById("videoModal").style.display = "block";
+        }
+        
+        function hideVideo() {
+            var videoModal = document.getElementById("videoModal");
+            videoModal.style.display = "none";
+            var iframe = videoModal.querySelector("iframe");
+            iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
